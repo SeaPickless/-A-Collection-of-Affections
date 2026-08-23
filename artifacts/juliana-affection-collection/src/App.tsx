@@ -164,7 +164,6 @@ function App() {
   const [lightbox, setLightbox] = useState<number | null>(null);
   const [secretOpen, setSecretOpen] = useState(false);
   const [musicOn, setMusicOn] = useState(false);
-  const [musicError, setMusicError] = useState(false);
   const [revealedWonder, setRevealedWonder] = useState(false);
   const touchStart = useRef<number | null>(null);
   const audio = useRef<HTMLAudioElement | null>(null);
@@ -203,7 +202,6 @@ function App() {
   useEffect(() => {
     audio.current = new Audio(siteConfig.backgroundMusic);
     audio.current.loop = true;
-    audio.current.addEventListener("error", () => setMusicError(true));
     return () => audio.current?.pause();
   }, []);
 
@@ -214,7 +212,6 @@ function App() {
       setMusicOn(false);
     } else {
       void audio.current.play().then(() => setMusicOn(true)).catch(() => {
-        setMusicError(true);
         setMusicOn(false);
       });
     }
@@ -295,7 +292,6 @@ What I felt for you was real.</div>
           <div className="section-inner">
              <div className="section-heading reveal"><h2>Fragments of Us</h2><p>Three moments I will always carry with me.</p></div>
             <div className="gallery-grid stagger">{memories.map((memory, index) => <button className="memory-card" style={{ "--tilt": `${index % 2 ? 1.3 : -1.1}deg` } as CSSProperties} key={memory.image} onClick={() => setLightbox(index)} data-testid={`button-memory-${index + 1}`}><div className="memory-image"><SmartImage src={memory.image} alt={memory.caption} placeholder="A photograph will live here." /><span className="pressed" aria-hidden="true">✦</span></div><p className="memory-caption">{memory.caption}</p></button>)}</div>
-             <div className="gallery-guide">Place your three treasured photographs in <strong>images/memory1.jpg</strong>, <strong>images/memory2.jpg</strong>, and <strong>images/memory3.jpg</strong>.</div>
           </div>
         </section>
 
@@ -303,7 +299,6 @@ What I felt for you was real.</div>
            <div className="section-inner">
              <div className="section-heading reveal"><h2>Her</h2><p>Photographs of you, kept with tenderness.</p></div>
              <div className="gallery-grid her-gallery stagger">{herPhotos.map((photo, index) => <button className="memory-card her-card" style={{ "--tilt": `${index % 2 ? -1.1 : 1.1}deg` } as CSSProperties} key={photo.image} onClick={() => setLightbox(memories.length + index)} data-testid={`button-her-photo-${index + 1}`}><div className="memory-image"><SmartImage src={photo.image} alt={`Juliana portrait ${index + 1}`} placeholder="Her photograph will live here." /></div></button>)}</div>
-             <div className="gallery-guide">Add up to five portraits in <strong>images/juliana1.jpg</strong> through <strong>images/juliana5.jpg</strong>. You can add more by extending the <strong>herPhotos</strong> list near the top of <strong>App.tsx</strong>.</div>
            </div>
          </section>
 
@@ -363,7 +358,7 @@ That will always mean something to me.</p></div></section>
 
         <section id="timeline" className="section timeline-section"><div className="section-inner"><div className="section-heading reveal"><div className="eyebrow">Four small chapters</div><h2>Our Little Timeline</h2></div><div className="timeline stagger">{timeline.map((item) => <article className="timeline-item" key={item.title}><span className="timeline-dot" /><div className="timeline-date">{item.date}</div><h3>{item.title}</h3><p>{item.description}</p></article>)}</div></div></section>
 
-        <section id="songs" className="section songs-section"><div className="section-inner"><div className="section-heading reveal"><h2>A Song That Reminds Me of You</h2><p>Some songs become memories the moment they become associated with someone we love.</p></div><div className="song-list stagger">{songs.map((song) => <article className="song-card" key={song.title}><div><h3>{song.title}</h3><p>{song.artist}</p></div></article>)}</div><button className={`button-gold music-button ${musicOn ? "playing" : ""}`} onClick={setMusic} aria-label="Toggle When I Met You" data-testid="button-music">{musicOn ? <VolumeX size={15} /> : <Volume2 size={15} />} {musicOn ? "Pause" : "Play"} When I Met You</button><div className="music-note">{musicError ? "Add the audio file at audio/when-i-met-you.mp3 to hear the song." : "Press play whenever you want the song to accompany these pages."}</div></div></section>
+        <section id="songs" className="section songs-section"><div className="section-inner"><div className="section-heading reveal"><h2>A Song That Reminds Me of You</h2><p>Some songs become memories the moment they become associated with someone we love.</p></div><div className="song-list stagger">{songs.map((song) => <article className="song-card" key={song.title}><div><h3>{song.title}</h3><p>{song.artist}</p></div></article>)}</div><button className={`button-gold music-button ${musicOn ? "playing" : ""}`} onClick={setMusic} aria-label="Toggle When I Met You" data-testid="button-music">{musicOn ? <VolumeX size={15} /> : <Volume2 size={15} />} {musicOn ? "Pause" : "Play"} When I Met You</button><div className="music-note">Press play whenever you want the song to accompany these pages.</div></div></section>
 
         <section className="section secret-section"><div className="section-inner"><div className="section-heading reveal" style={{ marginInline: "auto", textAlign: "center" }}><div className="eyebrow">A sealed page</div><h2>There Is Something Else I Want You to Know…</h2></div><button className="button-gold secret-button" onClick={() => setSecretOpen((value) => !value)} data-testid="button-secret-message">{secretOpen ? "Close the letter" : "Open the letter"}</button>{secretOpen && <div className="secret-letter"><p>If you have read this far, then perhaps you now understand what I could never properly say.
 
