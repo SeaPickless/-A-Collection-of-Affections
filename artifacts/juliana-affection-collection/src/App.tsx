@@ -1,26 +1,29 @@
 import { useEffect, useRef, useState, type CSSProperties } from "react";
-import { ArrowDown, ArrowLeft, ArrowRight, ExternalLink, Heart, Menu, Volume2, VolumeX, X } from "lucide-react";
+import { ArrowDown, ArrowLeft, ArrowRight, Heart, Menu, Volume2, VolumeX, X } from "lucide-react";
 
 // EASY CUSTOMIZATION — keep the personal material together near the top.
 const siteConfig = {
   name: "Juliana",
   author: "Denmark",
   profileImage: "images/juliana.jpg",
-  backgroundMusic: "",
+  backgroundMusic: "audio/when-i-met-you.mp3",
 };
 
 const memories = [
   { image: "images/memory1.jpg", caption: "The little moments meant the most." },
   { image: "images/memory2.jpg", caption: "A memory I will always treasure." },
   { image: "images/memory3.jpg", caption: "Somewhere in time, there was us." },
-  { image: "images/memory4.jpg", caption: "A moment I wish I could preserve forever." },
-  { image: "images/memory5.jpg", caption: "Even ordinary days became beautiful." },
-  { image: "images/memory6.jpg", caption: "The quiet parts of a day could feel like ours." },
-  { image: "images/memory7.jpg", caption: "I kept the tenderness, even after the day was gone." },
-  { image: "images/memory8.jpg", caption: "There was beauty in the ordinary, because you were there." },
-  { image: "images/memory9.jpg", caption: "A small scene, held carefully in memory." },
-  { image: "images/memory10.jpg", caption: "Some photographs capture a feeling." },
 ];
+
+const herPhotos = [
+  { image: "images/juliana1.jpg", caption: "Juliana" },
+  { image: "images/juliana2.jpg", caption: "Juliana" },
+  { image: "images/juliana3.jpg", caption: "Juliana" },
+  { image: "images/juliana4.jpg", caption: "Juliana" },
+  { image: "images/juliana5.jpg", caption: "Juliana" },
+];
+
+const galleryPhotos = [...memories, ...herPhotos];
 
 const timeline = [
   { date: "2025", title: "THE BEGINNING", description: "The chapter where everything started." },
@@ -30,9 +33,7 @@ const timeline = [
 ];
 
 const songs = [
-  { title: "A song to return to", artist: "A place in the quiet", link: "#" },
-  { title: "The one that sounds like summer", artist: "For remembering", link: "#" },
-  { title: "After the last light", artist: "For the road home", link: "#" },
+  { title: "When I Met You", artist: "APO Hiking Society", link: "#" },
 ];
 
 const reasons = [
@@ -163,6 +164,7 @@ function App() {
   const [lightbox, setLightbox] = useState<number | null>(null);
   const [secretOpen, setSecretOpen] = useState(false);
   const [musicOn, setMusicOn] = useState(false);
+  const [musicError, setMusicError] = useState(false);
   const [revealedWonder, setRevealedWonder] = useState(false);
   const touchStart = useRef<number | null>(null);
   const audio = useRef<HTMLAudioElement | null>(null);
@@ -189,8 +191,8 @@ function App() {
     const onKey = (event: KeyboardEvent) => {
       if (lightbox !== null) {
         if (event.key === "Escape") setLightbox(null);
-        if (event.key === "ArrowRight") setLightbox((value) => value === null ? 0 : (value + 1) % memories.length);
-        if (event.key === "ArrowLeft") setLightbox((value) => value === null ? memories.length - 1 : (value - 1 + memories.length) % memories.length);
+        if (event.key === "ArrowRight") setLightbox((value) => value === null ? 0 : (value + 1) % galleryPhotos.length);
+        if (event.key === "ArrowLeft") setLightbox((value) => value === null ? galleryPhotos.length - 1 : (value - 1 + galleryPhotos.length) % galleryPhotos.length);
       } else if (event.key === "ArrowRight") setReasonIndex((value) => Math.min(reasons.length - 1, value + 1));
       else if (event.key === "ArrowLeft") setReasonIndex((value) => Math.max(0, value - 1));
     };
@@ -199,20 +201,26 @@ function App() {
   }, [lightbox]);
 
   useEffect(() => {
-    if (!siteConfig.backgroundMusic) return;
     audio.current = new Audio(siteConfig.backgroundMusic);
     audio.current.loop = true;
+    audio.current.addEventListener("error", () => setMusicError(true));
     return () => audio.current?.pause();
   }, []);
 
   const setMusic = () => {
     if (!audio.current) return;
-    if (musicOn) audio.current.pause();
-    else void audio.current.play().catch(() => setMusicOn(false));
-    setMusicOn((value) => !value);
+    if (musicOn) {
+      audio.current.pause();
+      setMusicOn(false);
+    } else {
+      void audio.current.play().then(() => setMusicOn(true)).catch(() => {
+        setMusicError(true);
+        setMusicOn(false);
+      });
+    }
   };
   const navigate = (id: string) => { setMenuOpen(false); document.getElementById(id)?.scrollIntoView({ behavior: "smooth" }); };
-  const currentMemory = lightbox === null ? null : memories[lightbox];
+  const currentMemory = lightbox === null ? null : galleryPhotos[lightbox];
   const reason = reasons[reasonIndex];
 
   return (
@@ -220,7 +228,6 @@ function App() {
       {!opened && (
         <div className="opening" aria-label="Opening screen">
           <div className="opening-inner">
-            <div className="opening-kicker">A private collection · volume one</div>
             <h1 className="display">A Collection of Affections<br />Dear to My Heart</h1>
             <div className="ornament" aria-hidden="true">— · —</div>
             <p className="opening-sub">For Juliana<br /><em>Some feelings are too deep to be contained in a single letter.</em></p>
@@ -233,11 +240,11 @@ function App() {
         <div className="nav-inner">
           <button className="nav-brand button-quiet" onClick={() => navigate("collection")} aria-label="Return to the beginning" data-testid="button-nav-home"><span className="nav-seal"><Heart size={15} /></span><span>A Collection of Affections</span></button>
           <div className="nav-links">
-            {["letter", "memories", "reasons", "meaning", "timeline", "songs", "final-letter"].map((id) => <button className="button-quiet" key={id} onClick={() => navigate(id)} data-testid={`button-nav-${id}`}>{id.replace("-", " ")}</button>)}
+            {["letter", "memories", "her", "reasons", "meaning", "timeline", "songs", "final-letter"].map((id) => <button className="button-quiet" key={id} onClick={() => navigate(id)} data-testid={`button-nav-${id}`}>{id === "songs" ? "song" : id.replace("-", " ")}</button>)}
           </div>
           <button className="menu-toggle" aria-label={menuOpen ? "Close menu" : "Open menu"} aria-expanded={menuOpen} onClick={() => setMenuOpen((value) => !value)} data-testid="button-mobile-menu">{menuOpen ? <X size={18} /> : <Menu size={18} />}</button>
         </div>
-        <div className={`mobile-menu ${menuOpen ? "open" : ""}`}><nav aria-label="Mobile navigation">{["letter", "memories", "reasons", "meaning", "timeline", "songs", "final-letter"].map((id) => <button className="button-quiet" key={id} onClick={() => navigate(id)} data-testid={`button-mobile-nav-${id}`}>{id.replace("-", " ")}</button>)}</nav></div>
+        <div className={`mobile-menu ${menuOpen ? "open" : ""}`}><nav aria-label="Mobile navigation">{["letter", "memories", "her", "reasons", "meaning", "timeline", "songs", "final-letter"].map((id) => <button className="button-quiet" key={id} onClick={() => navigate(id)} data-testid={`button-mobile-nav-${id}`}>{id === "songs" ? "song" : id.replace("-", " ")}</button>)}</nav></div>
       </header>
 
       <main>
@@ -247,8 +254,7 @@ function App() {
               <div className="eyebrow">For Juliana</div>
               <h2 className="display">A Hundred Reasons<br /><em>Why My Heart<br />Still Belongs to You</em> <Heart className="heart-glyph" size={28} strokeWidth={1} aria-label="heart" /></h2>
               <p className="hero-lede">A hundred words could never fully explain what you have meant to me.</p>
-              <p className="hero-note">Read slowly. These words were written with a heart that still remembers.</p>
-              <div className="hero-actions"><button className="button-gold" onClick={() => navigate("letter")} data-testid="button-begin-reading">Begin reading <ArrowDown size={14} /></button><span className="scroll-cue">A story in seven rooms <span>·</span></span></div>
+               <div className="hero-actions"><button className="button-gold" onClick={() => navigate("letter")} data-testid="button-begin-reading">Begin reading <ArrowDown size={14} /></button></div>
             </div>
             <div className="portrait-wrap reveal">
               <div className="portrait-frame"><SmartImage src={siteConfig.profileImage} alt="Juliana" /><div className="portrait-caption">her photograph will live here</div></div>
@@ -287,10 +293,19 @@ What I felt for you was real.</div>
 
         <section id="memories" className="section gallery-section">
           <div className="section-inner">
-            <div className="section-heading reveal"><div className="eyebrow">The album</div><h2>Fragments of Us</h2><p>Some memories deserve more than to be remembered. They deserve to be preserved.</p></div>
+             <div className="section-heading reveal"><h2>Fragments of Us</h2><p>Three moments I will always carry with me.</p></div>
             <div className="gallery-grid stagger">{memories.map((memory, index) => <button className="memory-card" style={{ "--tilt": `${index % 2 ? 1.3 : -1.1}deg` } as CSSProperties} key={memory.image} onClick={() => setLightbox(index)} data-testid={`button-memory-${index + 1}`}><div className="memory-image"><SmartImage src={memory.image} alt={memory.caption} placeholder="A photograph will live here." /><span className="pressed" aria-hidden="true">✦</span></div><p className="memory-caption">{memory.caption}</p></button>)}</div>
+             <div className="gallery-guide">Place your three treasured photographs in <strong>images/memory1.jpg</strong>, <strong>images/memory2.jpg</strong>, and <strong>images/memory3.jpg</strong>.</div>
           </div>
         </section>
+
+         <section id="her" className="section her-section">
+           <div className="section-inner">
+             <div className="section-heading reveal"><h2>Her</h2><p>Photographs of you, kept with tenderness.</p></div>
+             <div className="gallery-grid her-gallery stagger">{herPhotos.map((photo, index) => <button className="memory-card her-card" style={{ "--tilt": `${index % 2 ? -1.1 : 1.1}deg` } as CSSProperties} key={photo.image} onClick={() => setLightbox(memories.length + index)} data-testid={`button-her-photo-${index + 1}`}><div className="memory-image"><SmartImage src={photo.image} alt={`Juliana portrait ${index + 1}`} placeholder="Her photograph will live here." /></div></button>)}</div>
+             <div className="gallery-guide">Add up to five portraits in <strong>images/juliana1.jpg</strong> through <strong>images/juliana5.jpg</strong>. You can add more by extending the <strong>herPhotos</strong> list near the top of <strong>App.tsx</strong>.</div>
+           </div>
+         </section>
 
         <section id="reasons" className={`section reasons-section ${reasonIndex === 99 ? "climax" : ""}`}>
           <div className="section-inner reason-layout">
@@ -303,7 +318,7 @@ But they are the closest I could come to putting my heart into words.</p>{reason
               <div className="reason-card" key={reasonIndex} aria-live="polite">
                 <div><div className="reason-label">Reason</div><div className="reason-number display">{String(reasonIndex + 1).padStart(2, "0")}</div><div className="reason-rule" /></div>
                 <p className="reason-copy">{reason}</p><div className="reason-ornament" aria-hidden="true">— · —</div>
-                <div><div className="reason-progress"><span>{reasonIndex + 1} / 100</span><div className="progress-track"><span style={{ width: `${(reasonIndex + 1)}%` }} /></div><span>{reasonIndex === 99 ? "the last page" : "keep reading"}</span></div><div className="reason-controls"><button className="button-quiet" disabled={reasonIndex === 0} onClick={() => setReasonIndex((value) => Math.max(0, value - 1))} data-testid="button-reason-previous"><ArrowLeft size={15} /> Previous</button><button className="button-quiet" disabled={reasonIndex === 99} onClick={() => setReasonIndex((value) => Math.min(99, value + 1))} data-testid="button-reason-next">Next <ArrowRight size={15} /></button></div></div>
+                <div><div className="reason-progress"><span>{reasonIndex + 1} / 100</span><div className="progress-track"><span style={{ width: `${(reasonIndex + 1)}%` }} /></div></div><div className="reason-controls"><button className="button-quiet" disabled={reasonIndex === 0} onClick={() => setReasonIndex((value) => Math.max(0, value - 1))} data-testid="button-reason-previous"><ArrowLeft size={15} /> Previous</button><button className="button-quiet" disabled={reasonIndex === 99} onClick={() => setReasonIndex((value) => Math.min(99, value + 1))} data-testid="button-reason-next">Next <ArrowRight size={15} /></button></div></div>
               </div>
             </div>
           </div>
@@ -348,7 +363,7 @@ That will always mean something to me.</p></div></section>
 
         <section id="timeline" className="section timeline-section"><div className="section-inner"><div className="section-heading reveal"><div className="eyebrow">Four small chapters</div><h2>Our Little Timeline</h2></div><div className="timeline stagger">{timeline.map((item) => <article className="timeline-item" key={item.title}><span className="timeline-dot" /><div className="timeline-date">{item.date}</div><h3>{item.title}</h3><p>{item.description}</p></article>)}</div></div></section>
 
-        <section id="songs" className="section songs-section"><div className="section-inner"><div className="section-heading reveal"><div className="eyebrow">The listening room</div><h2>Songs That Remind Me of You</h2><p>No autoplay. Just a few doors left open.</p></div><div className="song-list stagger">{songs.map((song) => <article className="song-card" key={song.title}><div><h3>{song.title}</h3><p>{song.artist}</p></div><a className="song-link" href={song.link} onClick={(event) => event.preventDefault()} data-testid={`link-song-${song.title}`}>Listen <ExternalLink size={12} /></a></article>)}</div><button className="button-gold music-button" onClick={setMusic} disabled={!siteConfig.backgroundMusic} aria-label={siteConfig.backgroundMusic ? "Toggle background music" : "Background music unavailable"} data-testid="button-music">{musicOn ? <VolumeX size={15} /> : <Volume2 size={15} />} {musicOn ? "Pause music" : "Play optional music"}</button><div className="music-note">{siteConfig.backgroundMusic ? "Music is always your choice." : "No audio file is attached yet. Add one near the top of App.tsx when you are ready."}</div></div></section>
+        <section id="songs" className="section songs-section"><div className="section-inner"><div className="section-heading reveal"><h2>A Song That Reminds Me of You</h2><p>Some songs become memories the moment they become associated with someone we love.</p></div><div className="song-list stagger">{songs.map((song) => <article className="song-card" key={song.title}><div><h3>{song.title}</h3><p>{song.artist}</p></div></article>)}</div><button className={`button-gold music-button ${musicOn ? "playing" : ""}`} onClick={setMusic} aria-label="Toggle When I Met You" data-testid="button-music">{musicOn ? <VolumeX size={15} /> : <Volume2 size={15} />} {musicOn ? "Pause" : "Play"} When I Met You</button><div className="music-note">{musicError ? "Add the audio file at audio/when-i-met-you.mp3 to hear the song." : "Press play whenever you want the song to accompany these pages."}</div></div></section>
 
         <section className="section secret-section"><div className="section-inner"><div className="section-heading reveal" style={{ marginInline: "auto", textAlign: "center" }}><div className="eyebrow">A sealed page</div><h2>There Is Something Else I Want You to Know…</h2></div><button className="button-gold secret-button" onClick={() => setSecretOpen((value) => !value)} data-testid="button-secret-message">{secretOpen ? "Close the letter" : "Open the letter"}</button>{secretOpen && <div className="secret-letter"><p>If you have read this far, then perhaps you now understand what I could never properly say.
 
@@ -404,7 +419,7 @@ Most of all, thank you for once being someone I could love so deeply.</p><div cl
 
       <footer className="footer">A collection kept with care · For Juliana · {siteConfig.author}</footer>
 
-      {currentMemory && <div className="lightbox" role="dialog" aria-modal="true" aria-label="Memory photograph" onClick={() => setLightbox(null)}><div className="lightbox-content" onClick={(event) => event.stopPropagation()}><button className="lightbox-close" onClick={() => setLightbox(null)} aria-label="Close photograph" data-testid="button-close-lightbox"><X size={18} /></button><SmartImage src={currentMemory.image} alt={currentMemory.caption} placeholder="This photograph is still waiting to be placed here." /><p className="lightbox-caption">{currentMemory.caption}</p><div className="reason-controls"><button className="button-quiet" onClick={() => setLightbox((value) => value === null ? 0 : (value - 1 + memories.length) % memories.length)} data-testid="button-lightbox-previous"><ArrowLeft size={15} /> Previous</button><span className="sans" style={{ fontSize: ".7rem", color: "#d6b9ab" }}>{(lightbox ?? 0) + 1} / {memories.length}</span><button className="button-quiet" onClick={() => setLightbox((value) => value === null ? 0 : (value + 1) % memories.length)} data-testid="button-lightbox-next">Next <ArrowRight size={15} /></button></div></div></div>}
+      {currentMemory && <div className="lightbox" role="dialog" aria-modal="true" aria-label="Photograph" onClick={() => setLightbox(null)}><div className="lightbox-content" onClick={(event) => event.stopPropagation()}><button className="lightbox-close" onClick={() => setLightbox(null)} aria-label="Close photograph" data-testid="button-close-lightbox"><X size={18} /></button><SmartImage src={currentMemory.image} alt={currentMemory.caption} placeholder="This photograph is still waiting to be placed here." /><p className="lightbox-caption">{currentMemory.caption}</p><div className="reason-controls"><button className="button-quiet" onClick={() => setLightbox((value) => value === null ? 0 : (value - 1 + galleryPhotos.length) % galleryPhotos.length)} data-testid="button-lightbox-previous"><ArrowLeft size={15} /> Previous</button><span className="sans" style={{ fontSize: ".7rem", color: "#d6b9ab" }}>{(lightbox ?? 0) + 1} / {galleryPhotos.length}</span><button className="button-quiet" onClick={() => setLightbox((value) => value === null ? 0 : (value + 1) % galleryPhotos.length)} data-testid="button-lightbox-next">Next <ArrowRight size={15} /></button></div></div></div>}
 
       <div className="petals" aria-hidden="true">{Array.from({ length: 9 }).map((_, index) => <span className="petal" key={index} style={{ left: `${8 + index * 10}%`, ["--fall" as string]: `${16 + index * 2}s`, ["--delay" as string]: `${-index * 2}s`, ["--drift" as string]: `${(index % 2 ? -1 : 1) * (20 + index * 8)}px` }} />)}</div>
     </div>
