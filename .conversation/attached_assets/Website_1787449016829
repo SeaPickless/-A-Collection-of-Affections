@@ -1,0 +1,1586 @@
+CREATE A COMPLETE INTERACTIVE ROMANTIC WEBSITE FOR JULIANA
+
+============================================================
+PROJECT CONCEPT
+============================================================
+
+Create a beautiful, deeply romantic, emotional, cinematic personal website dedicated to someone named Juliana.
+
+The website is called:
+
+“A Collection of Affections Dear to My Heart”
+
+The main featured work inside the collection is:
+
+“A Hundred Reasons Why My Heart Still Belongs to You”
+
+This website should feel like a private digital love letter, an old Victorian journal, a romantic memory album, and a moonlit garden combined into one experience.
+
+This is NOT a generic Valentine's Day website.
+
+It should feel personal, mature, elegant, intimate, nostalgic, romantic, bittersweet, and sincere.
+
+The central message of the entire website is:
+
+“I am not asking you to return.
+I am not asking you for anything.
+I simply want you to know how deeply you were loved.”
+
+The relationship has ended, and the narrator still loves and cherishes Juliana. The website must communicate love without guilt, pressure, manipulation, or demanding that she return.
+
+============================================================
+TECHNOLOGY
+============================================================
+
+Use:
+
+- HTML5
+- CSS3
+- Vanilla JavaScript
+- No backend required
+- No database
+- No login
+- No complicated framework unless absolutely necessary
+- Must run directly in Replit
+- Fully responsive
+- Mobile-first
+- Desktop compatible
+- Tablet compatible
+
+Create:
+
+index.html
+style.css
+script.js
+README.md
+
+Create:
+
+images/
+    juliana.jpg
+    memory1.jpg
+    memory2.jpg
+    memory3.jpg
+    memory4.jpg
+    memory5.jpg
+    memory6.jpg
+    memory7.jpg
+    memory8.jpg
+    memory9.jpg
+    memory10.jpg
+
+If images are missing, NEVER show broken-image icons. Display elegant placeholders.
+
+============================================================
+DESIGN PHILOSOPHY
+============================================================
+
+The website should feel like:
+
+- a Victorian love letter
+- a handwritten journal
+- an old photograph album
+- a romantic garden at midnight
+- a collection of memories
+- a confession written from the heart
+- a bittersweet love story
+
+The visual mood:
+
+Romantic
+Elegant
+Deep
+Nostalgic
+Warm
+Melancholic
+Hopeful
+Victorian
+Cinematic
+
+Avoid:
+
+- childish Valentine's graphics
+- giant emoji hearts
+- excessive pink
+- cheesy clipart
+- flashing animations
+- excessive glitter
+- generic templates
+- overly bright colors
+
+============================================================
+COLOR PALETTE
+============================================================
+
+Use:
+
+Deep Burgundy:
+#3B1018
+
+Dark Wine:
+#21090F
+
+Almost Black:
+#110B0D
+
+Muted Rose:
+#A85D6A
+
+Dusty Pink:
+#C9949C
+
+Cream:
+#F7EFE5
+
+Warm Ivory:
+#FFF9F1
+
+Antique Gold:
+#C8A96B
+
+Soft White:
+#FFF8F0
+
+Use dark backgrounds for emotional sections and cream paper backgrounds for letters.
+
+============================================================
+TYPOGRAPHY
+============================================================
+
+Use elegant Google Fonts:
+
+Cormorant Garamond
+Playfair Display
+Libre Baskerville
+Great Vibes
+Inter
+
+Use:
+
+Cormorant Garamond / Playfair Display:
+Major headings
+
+Libre Baskerville:
+Body text
+
+Great Vibes:
+Occasional handwritten accents
+
+Inter:
+Buttons and interface
+
+Do not use handwritten fonts for large amounts of text.
+
+============================================================
+GLOBAL ANIMATION STYLE
+============================================================
+
+Animations must be:
+
+slow
+soft
+elegant
+cinematic
+smooth
+
+Use:
+
+- fade-in
+- fade-up
+- fade-down
+- slow zoom
+- parallax
+- typewriter
+- floating particles
+- glowing lights
+- rose petals
+- hearts
+- butterflies
+- fireflies
+- subtle stars
+- soft mist
+- candlelight
+- blooming flowers
+
+Never let animations interfere with reading.
+
+Support:
+
+prefers-reduced-motion
+
+When reduced motion is enabled, disable or reduce decorative animations.
+
+============================================================
+OPENING SCREEN
+============================================================
+
+Create a full-screen cinematic opening.
+
+Background:
+
+Almost black burgundy.
+
+Add:
+
+- subtle stars
+- floating dust
+- tiny fireflies
+- very faint rose petals
+- soft golden particles
+- subtle vines around the edges
+
+Center:
+
+“A Collection of Affections
+Dear to My Heart”
+
+Below:
+
+“For Juliana”
+
+Then:
+
+“Some feelings are too deep to be contained in a single letter.”
+
+Add a small decorative rose.
+
+Button:
+
+“OPEN THE COLLECTION”
+
+When clicked:
+
+- button gently glows
+- several petals rise
+- tiny hearts float upward
+- opening screen fades away
+- main website fades in
+- background music does NOT automatically start
+
+============================================================
+MAIN NAVIGATION
+============================================================
+
+Create a beautiful minimal navigation.
+
+Desktop:
+
+Collection
+Letter
+Memories
+100 Reasons
+What You Meant
+Timeline
+Songs
+Final Letter
+
+Mobile:
+
+Hamburger menu.
+
+Navigation should be transparent initially and become slightly blurred/glass-like after scrolling.
+
+============================================================
+HERO SECTION
+============================================================
+
+Create a cinematic hero.
+
+Small uppercase label:
+
+FOR JULIANA
+
+Main title:
+
+“A Hundred Reasons
+Why My Heart Still Belongs to You”
+
+Subtitle:
+
+“A hundred words could never fully explain what you have meant to me.”
+
+Add:
+
+“Read slowly. These words were written with a heart that still remembers.”
+
+Create an elegant Victorian portrait frame.
+
+Image:
+
+images/juliana.jpg
+
+If missing:
+
+display:
+
+“Her photograph will live here.”
+
+Add subtle floral decoration around the frame.
+
+Flowers:
+
+- burgundy roses
+- dusty pink flowers
+- delicate vines
+- small leaves
+
+Add a subtle glowing heart behind the image.
+
+Button:
+
+“BEGIN READING”
+
+Clicking it smoothly scrolls to the letter.
+
+============================================================
+FLOWERS AND ROMANTIC GARDEN ATMOSPHERE
+============================================================
+
+Throughout the website use elegant romantic floral decorations.
+
+Include:
+
+- roses
+- rose petals
+- vines
+- leaves
+- small flowers
+- butterflies
+- fireflies
+- subtle hearts
+- golden particles
+- stars
+
+Do NOT overcrowd the page.
+
+============================================================
+ANIMATED ROSE PETALS
+============================================================
+
+Create JavaScript-generated rose petals.
+
+Each petal has:
+
+- random size
+- random rotation
+- random speed
+- random horizontal movement
+- random opacity
+
+Keep approximately 5–15 visible at once.
+
+Mobile:
+
+5–8 maximum.
+
+Petals should slowly fall.
+
+============================================================
+FLOATING HEARTS
+============================================================
+
+Create subtle floating heart particles.
+
+Use CSS/SVG hearts instead of emoji.
+
+Colors:
+
+- muted rose
+- dusty pink
+- antique gold
+- ivory
+
+Most hearts should be outline hearts.
+
+Occasionally allow a heart to rise and fade.
+
+Never cover text.
+
+============================================================
+HEARTBEAT EFFECT
+============================================================
+
+Near the main title:
+
+“My Heart Still Belongs to You”
+
+Add a tiny heart outline.
+
+Animate:
+
+♡ → ♥ → ♡
+
+Slowly.
+
+============================================================
+BUTTERFLIES
+============================================================
+
+Occasionally show one or two elegant butterfly silhouettes.
+
+They should slowly fly across the screen.
+
+Do not use cartoon butterflies.
+
+============================================================
+FIREFLIES
+============================================================
+
+Dark sections should have subtle fireflies.
+
+They should:
+
+- glow
+- fade
+- move slowly
+- appear randomly
+
+Use 10–20 maximum.
+
+============================================================
+CANDLELIGHT
+============================================================
+
+Letter sections should have a warm radial glow.
+
+It should look like candlelight.
+
+Use a slow CSS animation.
+
+============================================================
+VICTORIAN FLOWER DIVIDERS
+============================================================
+
+Between sections use decorative dividers.
+
+Examples:
+
+❦
+
+or custom SVG vines.
+
+Create elegant gold floral dividers.
+
+============================================================
+PERSONAL LETTER
+============================================================
+
+Create a Victorian letter-paper section.
+
+Background:
+
+warm ivory
+
+Texture:
+
+very subtle paper grain.
+
+Border:
+
+antique gold.
+
+Decorate corners with:
+
+- roses
+- leaves
+- vines
+
+Title:
+
+“To My Darling, Juliana”
+
+Text:
+
+“My darling Juliana,
+
+There are some things that are difficult to say aloud, and some feelings that seem far too large for an ordinary message.
+
+So I wrote them here.
+
+Not to ask anything of you.
+Not to make you feel guilty.
+Not to ask you to return.
+
+I simply wanted you to know how deeply you were loved.
+
+You were my darling, my partner, my best friend, my favorite person, and for a beautiful chapter of my life, you were my home.
+
+Perhaps our story ended before I was ready for it to end. Perhaps I will never fully understand why.
+
+But one thing I know with certainty:
+
+What I felt for you was real.”
+
+Signature:
+
+“With all the love my heart still carries,
+
+— Denmark”
+
+============================================================
+MEMORY GALLERY
+============================================================
+
+Title:
+
+“Fragments of Us”
+
+Subtitle:
+
+“Some memories deserve more than to be remembered. They deserve to be preserved.”
+
+Create an elegant masonry gallery.
+
+At least 10 possible images.
+
+Each image:
+
+- elegant frame
+- subtle floral decoration
+- hover zoom
+- fade-in
+- lightbox
+- caption
+
+JavaScript:
+
+const memories = [
+    {
+        image: "images/memory1.jpg",
+        caption: "The little moments meant the most."
+    },
+    {
+        image: "images/memory2.jpg",
+        caption: "A memory I will always treasure."
+    },
+    {
+        image: "images/memory3.jpg",
+        caption: "Somewhere in time, there was us."
+    },
+    {
+        image: "images/memory4.jpg",
+        caption: "A moment I wish I could preserve forever."
+    },
+    {
+        image: "images/memory5.jpg",
+        caption: "Even ordinary days became beautiful."
+    }
+];
+
+Make adding photos easy.
+
+============================================================
+PRESSED FLOWERS
+============================================================
+
+Add small pressed-flower decorations around some photo captions.
+
+They should look like flowers placed inside an old journal.
+
+============================================================
+100 REASONS
+============================================================
+
+THIS IS THE CENTERPIECE OF THE ENTIRE WEBSITE.
+
+Title:
+
+“A Hundred Reasons Why My Heart Still Belongs to You”
+
+Introduction:
+
+“One hundred reasons may seem like enough.
+
+They are not.
+
+But they are the closest I could come to putting my heart into words.”
+
+Display one reason at a time.
+
+Show:
+
+REASON 01
+
+Reason text.
+
+Progress:
+
+1 / 100
+
+Progress bar.
+
+Buttons:
+
+← Previous
+Next →
+
+Add keyboard support.
+
+ArrowLeft = previous
+ArrowRight = next
+
+On mobile:
+
+Swipe left/right.
+
+============================================================
+THE COMPLETE 100 REASONS
+============================================================
+
+Use these exact reasons.
+
+const reasons = [
+
+"I love you because, somehow, my heart found its way to you before I even understood what was happening.",
+
+"I love you because you became my darling—the name my heart learned to say with tenderness.",
+
+"I love you because you became my partner, the person with whom I once wished to share countless tomorrows.",
+
+"I love you because you became my best friend, and somehow friendship with you felt like coming home.",
+
+"I love you because you became the person I could always count on.",
+
+"I love you because you became one of my favorite people in the whole world.",
+
+"I love you because your presence brought a warmth into my life that I still remember.",
+
+"I love you because you made ordinary days feel extraordinary simply by being there.",
+
+"I love you because you understood pieces of me that I struggled to explain.",
+
+"I love you because I could show you the parts of myself I usually kept hidden.",
+
+"I love you because around you, I never felt the need to pretend to be someone I wasn't.",
+
+"I love you because you made me feel seen—not merely noticed, but truly seen.",
+
+"I love you because you made me feel heard when I needed someone to listen.",
+
+"I love you because you made me feel that my thoughts and feelings mattered.",
+
+"I love you because your happiness became something I cared for deeply.",
+
+"I love you because your smile could turn even the dullest day into something beautiful.",
+
+"I love you because your laughter became one of the sounds my heart grew fond of.",
+
+"I love you because even the smallest things about you became precious to me.",
+
+"I love you because I remembered little details about you simply because they belonged to you.",
+
+"I love you because you somehow found your way into my thoughts, even when I wasn't looking for you.",
+
+"I love you because you became the person I wanted to tell my stories to first.",
+
+"I love you because good news felt sweeter when you were the one I could share it with.",
+
+"I love you because difficult days felt a little less difficult when I knew you were there.",
+
+"I love you because you could make me smile without even trying.",
+
+"I love you because our most random conversations became some of my favorite memories.",
+
+"I love you because even our quiet moments felt meaningful.",
+
+"I love you because I never needed an excuse to want to be near you.",
+
+"I love you because your presence alone was enough to make me feel at peace.",
+
+"I love you because I wanted to celebrate every little victory life gave you.",
+
+"I love you because I was proud of you, even when you couldn't see how much you had accomplished.",
+
+"I love you because I believed in you.",
+
+"I love you because I wanted you to see in yourself the beautiful things I saw in you.",
+
+"I love you because your dreams mattered to me simply because they were yours.",
+
+"I love you because I wanted to watch you reach every dream you once told me about.",
+
+"I love you because I wanted your future to be brighter than anything you feared.",
+
+"I love you because I wanted life to be gentle with your heart.",
+
+"I love you because your sadness mattered to me.",
+
+"I love you because when you hurt, some part of me wished I could take the pain away.",
+
+"I love you because I wanted to be your comfort when the world became too heavy.",
+
+"I love you because I wanted you to know that you never had to carry everything alone.",
+
+"I love you because you taught me that loving someone means caring about the little things.",
+
+"I love you because you taught me that one person can become an entire world without even realizing it.",
+
+"I love you because you became a part of my happiness.",
+
+"I love you because you became a part of my hopes.",
+
+"I love you because, for a time, you became part of the future I imagined.",
+
+"I love you because giving you my heart never felt like a mistake.",
+
+"I love you because loving you came naturally to me.",
+
+"I love you because what I felt for you was never pretend.",
+
+"I love you because what we shared was real to me.",
+
+"I love you because some of the most beautiful memories in my life have you in them.",
+
+"I love you because there are moments with you I would gladly live through again.",
+
+"I love you because you became one of the most beautiful chapters of my life.",
+
+"I love you because, for a while, I truly believed our chapter would never have to end.",
+
+"I love you because I never knew goodbye could feel so much like losing a piece of myself.",
+
+"I love you because I still don't completely understand why our story had to end.",
+
+"I love you because even though things changed, my heart cannot simply erase what we were.",
+
+"I love you because an ending cannot make a beautiful beginning any less beautiful.",
+
+"I love you because I refuse to call what we had meaningless just because it did not last forever.",
+
+"I love you because forever was never necessary for something to have been real.",
+
+"I love you because I know, with all my heart, that I loved you sincerely.",
+
+"I love you because I never regret choosing you.",
+
+"I love you because I never regret giving you a piece of my heart.",
+
+"I love you because even the pain taught me how deeply a heart can love.",
+
+"I love you because I would rather treasure our memories than let our ending make them bitter.",
+
+"I love you because gratitude is stronger in me than resentment.",
+
+"I love you because I still want to remember you with tenderness.",
+
+"I love you because I still care whether you are okay.",
+
+"I love you because I still hope you smile often.",
+
+"I love you because I still pray that life treats you kindly.",
+
+"I love you because I still want wonderful things to find their way to you.",
+
+"I love you because you deserve happiness, even if I am no longer the person standing beside you.",
+
+"I love you because I never want my love to become a weight upon your heart.",
+
+"I love you because I respect your choices, even when accepting them hurts.",
+
+"I love you because I will never believe that love gives me the right to demand anything from you.",
+
+"I love you because sometimes loving someone means giving them the freedom to choose their own path.",
+
+"I love you because I can miss you without asking you to return.",
+
+"I love you because I can love you without asking you to love me in the same way.",
+
+"I love you because I can quietly wish you well, even from a distance.",
+
+"I love you because your happiness still matters to me, even when I am no longer part of it.",
+
+"I love you because I will always be grateful that our paths crossed.",
+
+"I love you because you left something beautiful behind in my heart.",
+
+"I love you because some people pass through our lives, while others leave their names permanently written within them.",
+
+"I love you because your name is one my heart will always remember.",
+
+"I love you because certain songs still sound a little different when they remind me of you.",
+
+"I love you because sometimes I still catch myself wanting to tell you something before remembering that things are different now.",
+
+"I love you because sometimes I still miss the little world we created together.",
+
+"I love you because sometimes I still wonder what our story might have become had things unfolded differently.",
+
+"I love you because there are questions about our ending that perhaps I will never have answers to.",
+
+"I love you because even without those answers, I refuse to rewrite our past as something ugly.",
+
+"I love you because you were once my person, and that will always be a precious truth of my life.",
+
+"I love you because you are a daughter of God, and there is something profoundly beautiful about knowing that the person I came to love was first loved by Him. I may no longer have the place beside you that I once had, but I will always pray that God guides your steps, protects your heart, and reminds you that you are deeply and unconditionally loved.",
+
+"I love you because I hope you never forget how precious you are.",
+
+"I love you because I hope you find people who will handle your heart with gentleness.",
+
+"I love you because I hope you are loved with patience, sincerity, tenderness, and truth.",
+
+"I love you because even if one day my heart learns to let you go, it will never regret having loved you.",
+
+"I love you because you taught my heart what it means to love someone sincerely—not merely for what they could give me, but simply because they were precious to me.",
+
+"I love you because even after everything, I still find myself grateful for every moment I was allowed to spend beside you. If you ever wonder whether you truly mattered to me, I hope these hundred reasons answer that question. You mattered more than I ever knew how to put into words.",
+
+"I love you because perhaps I never said enough while I had the chance. Perhaps there were feelings I left unspoken and moments when I failed to show you just how deeply I cared. If I could give you one thing from my heart now, it would be the certainty that you were never ordinary to me—you were someone I loved extraordinarily.",
+
+"I love you because if you ever look back upon us and wonder whether I truly loved you, I hope you remember this: I did. I loved you in the quiet moments, in the laughter, in the worries, in the little things, in the hopes I had for us, and even in the silence after we ended. I hope, someday, you will understand just how much of my heart was yours.",
+
+"And above all, I love you because, my darling Juliana, you were never simply someone who passed through my life. You were someone I treasured, someone I trusted, someone I chose, someone I prayed for, someone I imagined a future with, and someone who became so deeply woven into my heart that even our ending could not erase what I felt. I do not know why our story ended, and perhaps I never will. But if there is one thing I wish you could truly understand after reading all one hundred of these reasons, it is this: you were deeply, genuinely, and wholeheartedly loved. I am not asking you to return, nor am I asking you to carry the weight of my feelings. I only hope that, when you think of me someday, you will know that there was once someone who looked at you and saw someone worth loving with his whole heart. Someone who cherished your smile, worried about your sadness, believed in your dreams, prayed for your future, and loved you not because you were perfect, but because you were you. You were my darling, my partner, my best friend, my favorite person, and for a beautiful chapter of my life, you were my home. And perhaps the most honest thing I can leave with you is this: I would rather you know how deeply I loved you than leave this story with you believing that you were ever anything less than precious to me. Even if you never return, even if our paths remain apart, even if one day you love someone else, I will still be grateful that I once had the privilege of loving you. And if my heart must eventually learn to let you go, I hope it does so with a smile through the tears, because it was once lucky enough to love someone like you."
+
+];
+
+============================================================
+REASON CARD DESIGN
+============================================================
+
+Each reason card should contain:
+
+small label:
+
+REASON
+
+large number:
+
+01
+
+thin gold line
+
+reason text
+
+small floral ornament:
+
+❦
+
+Navigation:
+
+PREVIOUS
+NEXT
+
+Progress:
+
+01 / 100
+
+Progress bar.
+
+Add a small decorative rose beside the card.
+
+============================================================
+REASON PROGRESSION
+============================================================
+
+Reasons 1–25:
+
+Light romantic atmosphere.
+
+Reasons 26–50:
+
+More flowers and warm golden particles.
+
+Reason 50:
+
+Pause and show:
+
+“Halfway through a hundred reasons…”
+
+Then:
+
+“And somehow, they still don't feel like enough.”
+
+Reasons 51–75:
+
+Darker, more nostalgic atmosphere.
+
+Reasons 76–90:
+
+More petals and subtle hearts.
+
+Reasons 91–99:
+
+More emotional lighting.
+
+Reason 100:
+
+FULL CINEMATIC FINALE.
+
+============================================================
+REASON 100 FINALE
+============================================================
+
+When reason 100 is displayed:
+
+Slowly darken the page.
+
+Hide navigation temporarily.
+
+Add:
+
+- moonlight
+- rose petals
+- glowing hearts
+- fireflies
+- golden particles
+- subtle mist
+
+Then slowly bloom a large rose.
+
+Display:
+
+100 / 100
+
+Then:
+
+“And yet, somehow,
+a hundred reasons still aren't enough.”
+
+Pause.
+
+“You were deeply,
+genuinely,
+and wholeheartedly loved.”
+
+Pause.
+
+“If you ever wondered whether you truly mattered to me…”
+
+Pause.
+
+“You did.”
+
+Then:
+
+“More than these words could ever explain.”
+
+Allow the user to continue.
+
+============================================================
+WHAT YOU MEANT TO ME
+============================================================
+
+Title:
+
+“What You Meant to Me”
+
+Create elegant cards:
+
+MY DARLING
+
+“Because your name became one my heart learned to say with tenderness.”
+
+MY PARTNER
+
+“Because for a while, I imagined tomorrow with you.”
+
+MY BEST FRIEND
+
+“Because you were someone I could laugh with, confide in, and simply exist beside.”
+
+MY FAVORITE PERSON
+
+“Because somehow, out of everyone, my heart kept choosing you.”
+
+THE PERSON I COULD COUNT ON
+
+“Because your presence gave me comfort.”
+
+MY SAFE PLACE
+
+“Because around you, I could be myself.”
+
+SOMEONE I PRAYED FOR
+
+“Because your happiness mattered enough for me to place it in God's hands.”
+
+SOMEONE I WILL ALWAYS CHERISH
+
+“Because some people become memories, while others become part of who we are.”
+
+Decorate each card with tiny flowers.
+
+============================================================
+IF YOU EVER WONDERED
+============================================================
+
+Dark section.
+
+Title:
+
+“If You Ever Wondered…”
+
+Reveal:
+
+“You mattered.”
+
+“You were never ordinary to me.”
+
+“You were deeply loved.”
+
+“You were appreciated.”
+
+“You were cherished.”
+
+“You were prayed for.”
+
+“You were remembered.”
+
+“You still matter to me.”
+
+Then:
+
+“If you ever wondered whether I truly loved you…”
+
+Large:
+
+“I did.”
+
+Add subtle heartbeat.
+
+============================================================
+A DAUGHTER OF GOD
+============================================================
+
+Title:
+
+“A Daughter of God”
+
+Text:
+
+“I love you because you are a daughter of God, and there is something profoundly beautiful about knowing that the person I came to love was first loved by Him.
+
+I may no longer have the place beside you that I once had, but I will always pray that God guides your steps, protects your heart, and reminds you that you are deeply and unconditionally loved.”
+
+Visuals:
+
+- moonlight
+- stars
+- subtle golden rays
+- gentle fireflies
+- elegant cross silhouette
+- white flowers
+
+Keep it peaceful.
+
+============================================================
+WHAT I HOPE LIFE GIVES YOU
+============================================================
+
+Title:
+
+“What I Hope Life Gives You”
+
+Cards:
+
+“I hope you are happy.”
+
+“I hope you are safe.”
+
+“I hope you achieve your dreams.”
+
+“I hope you are surrounded by people who genuinely love you.”
+
+“I hope your heart remains gentle.”
+
+“I hope God guides your path.”
+
+“I hope you never forget your worth.”
+
+“I hope life is kind to you.”
+
+============================================================
+I AM NOT ASKING YOU TO RETURN
+============================================================
+
+Dark minimalist section.
+
+Title:
+
+“I Am Not Asking You to Return”
+
+Text:
+
+“I am not writing this to ask you to come back.
+
+I am not writing this to make you feel guilty.
+
+I am not writing this because I expect anything from you.
+
+I simply want you to know that what I felt was real.
+
+I loved you.
+
+And even if our paths remain apart, I will always be grateful that, for a beautiful chapter of my life, I got to love someone like you.”
+
+Add a single slowly falling rose petal.
+
+============================================================
+IF WE NEVER MEET THE SAME WAY AGAIN
+============================================================
+
+Text:
+
+“If life never brings us back to where we once were, I will still be grateful.
+
+Because I knew you.
+
+I loved you.
+
+I laughed with you.
+
+I made memories with you.
+
+And for a while, I got to call you mine.
+
+That will always mean something to me.”
+
+============================================================
+TIMELINE
+============================================================
+
+Title:
+
+“Our Little Timeline”
+
+Create an elegant vertical Victorian timeline.
+
+Allow unlimited entries.
+
+Example:
+
+2025
+THE BEGINNING
+
+“The chapter where everything started.”
+
+2025
+GETTING CLOSER
+
+“When you became more than just someone I knew.”
+
+2026
+BEAUTIFUL MEMORIES
+
+“The moments I wish I could preserve forever.”
+
+2026
+THE ENDING
+
+“Some chapters end before our hearts are ready.”
+
+Allow each timeline entry to have:
+
+date
+title
+description
+image
+
+============================================================
+SONGS
+============================================================
+
+Title:
+
+“Songs That Remind Me of You”
+
+Create elegant music cards.
+
+Each:
+
+song title
+artist
+link
+
+No autoplay.
+
+Optional local audio player.
+
+JavaScript:
+
+const songs = [
+    {
+        title: "Song Title",
+        artist: "Artist",
+        link: "#"
+    }
+];
+
+============================================================
+SECRET MESSAGE
+============================================================
+
+Button:
+
+“There is something else I want you to know…”
+
+When clicked:
+
+Reveal a hidden letter.
+
+Text:
+
+“If you have read this far, then perhaps you now understand what I could never properly say.
+
+You were loved.
+
+Not perfectly, because I am not perfect.
+
+But sincerely.
+
+Wholeheartedly.
+
+And more deeply than I knew how to express.”
+
+Add roses slowly appearing around the message.
+
+============================================================
+PHOTO QUOTE
+============================================================
+
+Create a large photograph section.
+
+Overlay:
+
+“Some photographs capture a moment.
+
+Some capture a feeling.
+
+And some capture a piece of your heart.”
+
+============================================================
+FINAL LETTER
+============================================================
+
+Title:
+
+“If These Words Ever Reach Your Heart”
+
+Text:
+
+“I do not know what you will feel after reading all of this.
+
+Perhaps nothing.
+
+Perhaps nostalgia.
+
+Perhaps sadness.
+
+Perhaps you will simply close this page and continue with your day.
+
+And that is okay.
+
+I never created this to demand a response.
+
+I created it because there was once so much love in my heart for you that I could not bear the thought of letting it disappear without leaving a trace.
+
+So here is that trace.
+
+One hundred reasons.
+
+One hundred little pieces of what you meant to me.
+
+And even these are not enough.
+
+Thank you for the memories.
+
+Thank you for the laughter.
+
+Thank you for the conversations.
+
+Thank you for the moments.
+
+Thank you for being part of my life.
+
+Most of all, thank you for once being someone I could love so deeply.”
+
+============================================================
+FINAL GARDEN
+============================================================
+
+The final section should look like a Victorian garden at midnight.
+
+Background:
+
+- almost black burgundy
+- moon
+- stars
+- roses
+- vines
+- fireflies
+- falling petals
+- soft mist
+- golden light
+
+Center text:
+
+“Some loves become memories.”
+
+Pause.
+
+“Some memories become stories.”
+
+Pause.
+
+“And some people remain forever in the quietest corners of our hearts.”
+
+Pause.
+
+“Thank you for being one of mine.”
+
+Then:
+
+“For Juliana”
+
+Then:
+
+“With love, always remembered with tenderness.”
+
+Then:
+
+❦
+
+Allow petals and fireflies to continue moving slowly.
+
+============================================================
+PHOTO FRAMES
+============================================================
+
+Make all photographs look elegant.
+
+Use:
+
+- antique gold borders
+- cream frames
+- floral corners
+- subtle shadows
+- pressed flowers
+- slight rotation
+- realistic paper texture
+
+Some photographs may have slight rotations like physical photographs placed in an album.
+
+Do not rotate excessively.
+
+============================================================
+CUSTOMIZATION
+============================================================
+
+At the very top of script.js create:
+
+// ============================================
+// EASY CUSTOMIZATION
+// ============================================
+
+const siteConfig = {
+    name: "Juliana",
+    author: "Denmark",
+    profileImage: "images/juliana.jpg",
+    backgroundMusic: "",
+};
+
+Also:
+
+const memories = [];
+const timeline = [];
+const songs = [];
+const reasons = [];
+
+Make all editable content easy to find.
+
+============================================================
+OPTIONAL BACKGROUND MUSIC
+============================================================
+
+Provide a music button:
+
+♫ MUSIC
+
+Do NOT autoplay.
+
+When clicked:
+
+Play/pause local audio.
+
+Use:
+
+audio/romantic.mp3
+
+if available.
+
+If no audio file exists, the music button should gracefully indicate that no music has been added.
+
+============================================================
+LIGHTBOX
+============================================================
+
+Clicking a memory photo should open a fullscreen lightbox.
+
+Include:
+
+- image
+- caption
+- previous
+- next
+- close
+
+Support:
+
+Escape = close
+
+ArrowLeft = previous
+
+ArrowRight = next
+
+============================================================
+SCROLL EFFECTS
+============================================================
+
+Use IntersectionObserver.
+
+Sections should reveal smoothly when entering viewport.
+
+Do not animate text every time it is scrolled into view.
+
+============================================================
+MOBILE
+============================================================
+
+Mobile experience must be excellent.
+
+Ensure:
+
+- no horizontal scrolling
+- readable text
+- large touch targets
+- swipe support for reasons
+- responsive gallery
+- mobile navigation
+- decorations reduced for performance
+- no animation blocking content
+
+============================================================
+ACCESSIBILITY
+============================================================
+
+Include:
+
+- alt text
+- semantic HTML
+- keyboard navigation
+- focus states
+- sufficient contrast
+- aria labels
+- reduced motion support
+
+============================================================
+README
+============================================================
+
+Create a detailed README.
+
+Explain:
+
+How to run the project.
+
+How to change:
+
+- Juliana's name
+- author's name
+- main photo
+- memory photos
+- captions
+- 100 reasons
+- timeline
+- songs
+- music
+- colors
+- fonts
+- final letter
+
+Explain:
+
+Put photos inside:
+
+/images
+
+Put music inside:
+
+/audio
+
+============================================================
+FINAL QUALITY CHECK
+============================================================
+
+Before finishing, test the entire website.
+
+Verify:
+
+- all 100 reasons exist
+- reason numbers display 1–100
+- previous works
+- next works
+- progress bar works
+- keyboard navigation works
+- mobile swipe works
+- photos work
+- lightbox works
+- navigation works
+- timeline works
+- music button works
+- secret message works
+- all animations work
+- no broken images
+- no console errors
+- no horizontal scrolling
+- mobile layout works
+- desktop layout works
+- reduced-motion works
+
+Do NOT replace the 100 reasons with placeholders.
+
+Do NOT shorten the reasons.
+
+Do NOT remove the emotional writing.
+
+============================================================
+FINAL EMOTIONAL EXPERIENCE
+============================================================
+
+The entire website should feel as if someone is opening a box of memories.
+
+The beginning should feel like discovering a letter.
+
+The middle should feel like remembering a relationship.
+
+The 100 reasons should feel like slowly opening the narrator's heart.
+
+The final reasons should feel increasingly emotional.
+
+Reason 100 should feel like the emotional climax.
+
+The final garden should feel peaceful rather than desperate.
+
+The website should ultimately communicate:
+
+“I loved you.
+
+I still care about you.
+
+I am grateful for you.
+
+I will always treasure what we had.
+
+And although I cannot control what happens next,
+
+I hope you know just how deeply you were loved.”
+
+Make this website exceptionally beautiful.
+
+Make it feel personal.
+
+Make it feel like a real memory.
+
+Make it feel like a love letter someone could keep forever.
+
+Do not make it look like a template.

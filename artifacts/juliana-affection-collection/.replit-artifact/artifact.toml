@@ -1,0 +1,28 @@
+kind = "web"
+previewPath = "/"
+title = "A Collection of Affections"
+description = "A cinematic, responsive digital love letter for Juliana with an interactive 100-reason reading journey, memory gallery, timeline, music control, and reflective closing garden."
+version = "1.0.0"
+id = "artifacts/juliana-affection-collection"
+router = "path"
+
+[[services]]
+name = "web"
+paths = [ "/" ]
+localPort = 24335
+
+[services.development]
+run = "pnpm --filter @workspace/juliana-affection-collection run dev"
+
+[services.production]
+build = [ "pnpm", "--filter", "@workspace/juliana-affection-collection", "run", "build" ]
+serve = "static"
+publicDir = "artifacts/juliana-affection-collection/dist/public"
+
+[[services.production.rewrites]]
+from = "/*"
+to = "/index.html"
+
+[services.env]
+PORT = "24335"
+BASE_PATH = "/"
